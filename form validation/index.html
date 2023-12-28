@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="./assets/font family/transfonter.org-20230915-074103/stylesheet.css">
+    <link rel="stylesheet" href="./assets/css/custom_style.css">
+</head>
+<body>
+    <div class="form_wrap">
+    <div class="container">
+        <div class="col-lg-8 m-auto ">
+            <div class="heading">
+            <h1>form validation</h1></div>
+
+    <form class="form_inner" onsubmit="return validation()">
+        <div class="form-group">
+          <label for="example_username" >Username</label>
+          <input type="text" class="form-control" id="username" aria-describedby="usernameHelp" placeholder="Enter username">
+          <span class="user_validation"></span>
+        </div>
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="text" class="form-control" id="password" placeholder="Password">
+          <span class="password_validation"></span>
+        </div>
+        <div class="form-group">
+            <label for="confirm_password">Confirm Password</label>
+            <input type="text" class="form-control" id="confirm_password" placeholder="Confirm Password">
+            <span class="copassword_validation"></span>
+          </div>
+          <div class="form-group">
+            <label for="moblie_number">Enter Moblile Number</label>
+            <input type="text" class="form-control" id="moblie_number" placeholder="mobile number">
+            <span class="number_validation"></span>
+          </div>
+          <div class="form-group">
+            <label for="Email">Email</label>
+            <input type="text" class="form-control" id="email" placeholder="email">
+            <span class="email_validation"></span>
+          </div>
+        <input type="submit" name="submit" value="submit" class="btn btn-success mt-3">
+      </form>
+      </div></div></div>
+    
+</body>
+<script>
+    function validation(){
+        var user=document.getElementById("username").value.trim();
+
+        var pass=document.getElementById("password").value.trim();
+       
+        var con_pass=document.getElementById("confirm_password").value.trim();
+        var num=document.getElementById("moblie_number").value.trim();
+        var email=document.getElementById("email").value.trim();
+       if(user == ""){
+        document.querySelector(".user_validation").innerHTML="** please enter username";
+        return false;
+       }
+       if(user.length<3){
+        document.querySelector(".user_validation").innerHTML="** Enter atleast 3 character";
+        return false;
+       }
+       var correct_way=/^[a-zA-z]+$/;
+       if(!user.match(correct_way)){
+        document.querySelector(".user_validation").innerHTML="** Only alphabets are allowed";
+        return false;
+       }
+        
+        if(pass == ""){
+        document.querySelector(".password_validation").innerHTML="** please enter password";
+        return false;
+       }
+       if((pass.length<3) ||(pass.length>10)){
+        document.querySelector(".password_validation").innerHTML="** enter between 3 to 10 character";
+        return false;
+       }
+    //    if(pass.length>10){
+    //     document.querySelector(".password_validation").innerHTML="** pls enter less then 10 character";
+    //     return false;
+    //    }
+       if(con_pass==""){
+        document.querySelector(".copassword_validation").innerHTML="** please confirm your password";
+        return false;
+       }
+       if(pass!=con_pass){
+        document.querySelector(".copassword_validation").innerHTML="** incorrect password ";
+        return false;
+       }
+       if(num==""){
+        document.querySelector(".number_validation").innerHTML="** please enter mobile number";
+        return false;
+       }
+       if(isNaN(num)){
+        document.querySelector(".number_validation").innerHTML="** please enter digit";
+        return false;
+       }
+       if(num.length!=10){
+        document.querySelector(".number_validation").innerHTML="** number should be 10 digit";
+        return false;
+       }
+       if((num.charAt(0)!=9)&&(num.charAt(0)!=8)&&(num.charAt(0)!=7)){
+        document.querySelector(".number_validation").innerHTML="**mobile number must start with 9,8 or 7";
+        return false;
+       }
+       if(email==""){
+        document.querySelector(".email_validation").innerHTML="** please enter your email";
+        return false;
+       }
+       if(email.indexOf('@')<=0){
+        document.querySelector(".email_validation").innerHTML="** invalid @ position";
+        return false;
+       }
+       if((email.charAt(email.length-4)!='.')&&(email.charAt(email.length-3)!='.')){
+        document.querySelector(".email_validation").innerHTML="** invalid . position";
+        return false;
+       }
+    }
+</script>
+</html>
