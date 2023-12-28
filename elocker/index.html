@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/ion-rangeslider/2.3.1/css/ion.rangeSlider.min.css" />
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+        <link rel="stylesheet" href="./assets/font family/poppins/stylesheet.css">
+          <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+
+<body>
+    <header>
+            <div class="inner">
+                <div class="left">
+                <a href="#" class="logo">
+                    <img src="./assets/images/logo.png" alt="logo">
+                </a></div>
+                <div class="center">
+                <button class="toggleMenu">
+                </button></div>
+                <div class="right">
+                <nav>
+                    <ul>
+                        <li>
+                            <a href="#">Sectors</a>
+                        </li>
+                        <li>
+                            <a href="#">Hardware</a>
+                        </li>
+                        <li>
+                            <a href="#">ROI calcuater</a>
+                        </li>
+                        <li>
+                            <a href="#">Resourses</a>
+                        </li>
+                        <li>
+                            <a href="#">Case Studies</a>
+                        </li>
+                        <li>
+                            <a href="#">Control</a>
+                        </li>
+                    </ul>
+                </nav>
+                <button class="book_demo">Book a demo</button>
+
+        </div></div>
+    </header> 
+    <div class="office_locker" data-aos="fade-up" data-aos-delay="500">
+        <div class="container">
+            <div class="inner">
+                <div class="row">
+                    <div class="uper">
+                        <h3>Savings Calculator</h3>
+                        <h1>Smart Office Locker</h1>
+                        <p>Enter your information in the calculator to estimate the cost savings for your office locker
+                            project,
+                            showing how the system pays for itself</p>
+                    </div>
+                    <div class="middle">
+                        <div class="row">
+                            <div class="col-lg-3 col-sm-6">
+                                <div class="input_detail">
+                                    <h4>What would you like to do?</h4>
+                                    <input type="text">
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-sm-6">
+                                <div class="input_detail">
+                                    <h4>Number of employees</h4>
+                                    <input type="number" id="employees">
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-sm-6">
+                                <div class="input_detail">
+                                    <h4>Office rent per f²</h4>
+                                    <input type="number" id="rent">
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-sm-6">
+                                <div class="input_detail">
+                                    <h4>Admin staff yearly salary</h4>
+                                    <input type="number" id="salary">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bottom">
+                        <div class="row">
+                            <div class="col-lg-6 col-12">
+                                <div class="range locker_staff">
+                                    <p>What % of staff need a locker?</p>
+                                    <input type="text" id="range_slider_locker" />
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-12">
+                                <div class="range">
+                                    <p>What % of your staff will be in the office on an average day?</p>
+                                    <input type="text" id="range_slider_staff" />
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="button_wrap">
+                                    <button id="btn">
+                                        calculate
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="cost_saving" data-aos="fade-up" data-aos-delay="500">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="heading">
+                        <h2>Your Cost Savings</h2>
+                    </div>
+                </div>
+                <div class="saving_pm">
+                    <div class="row">
+                        <div class="col-md-3 col-sm-5"  data-aos='fade-right' data-aos-delay="1000">
+                            <div class="left">
+                                <p>£8,674</p>
+                                <h5>per month</h5>
+                            </div>
+                        </div>
+                        <div class="col-md-8 col-sm-7" data-aos="fade-left" data-aos-delay="1500">
+                            <div class="right">
+                                <p>£8,674 per month! - Thats a pretty hefty number! Your monthly cost saving is
+                                    calculated using your data, and our industry experience, along with some clever
+                                    calculations in the background. This takes the whole saving calculated below and
+                                    devides by 36 months which is our standard contract length</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="saving_cal" data-aos="fade-up" data-aos-delay="1000">
+                    <div class="row m-0">
+                        <div class="col-xl-3 col-sm-6">
+                            <div class="cal calculate">
+                                <p class="hours_saved">000</p>
+                                <h5>Hours Saved Per year</h5>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-sm-6">
+                            <div class="cal calculate annual_saving_wrap">
+                                <p class="annual_saving">000</p>
+                                <h5>total annual saving</h5>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-sm-6">
+                            <div class="cal calculate ">
+                                <p class="locker_purchase_saving">000</p>
+                                <h5>initial locker purchase saving</h5>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-sm-6">
+                            <div class="cal">
+                                <p class="sapce_saving">000</p>
+                                <h5>space savings</h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="book_call" data-aos="fade-up" data-aos-delay="1000">
+        <div class="container">
+            <div class="book_call_inner">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="left">
+                            <h3>Want to see eLocker in action?</h3>
+                            <p>Book a short call to discuss your use case, this is no-obligation for quote and is just a
+                                quick chat to see how we can help with your locker management system</p>
+                            <button>Book a Call</button>
+                        </div>
+                    </div>
+                    <div class="col-md-6 p-0">
+                        <div class="right">
+                            <img src="./assets/images/Locker Fleet.png" alt="locker">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer data-aos="fade-up" data-aos-delay="500">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-5 col-sm-12">
+                    <div class="row">
+                        <div class="col-sm-7 ">
+                            <div class="elocker_info">
+                                <img src="./assets/images/logo.png" alt="logo">
+                                <p>eLocker is a tech company set up in 2016. We supply a SaaS based, smart locker
+                                    solution
+                                </p>
+                                <div class="address">
+                                <a href="#"><i class="fa-solid fa-location-dot"></i></a>
+                                <address>Icon Innovation Centre Eastern Way, Daventry NN11 0QB, United Kingdom</address></div>
+                                <a href="tel:+020 8798 0210"><i class="fa-solid fa-phone"></i>
+                                    020 8798 0210</a><br />
+                                <button>Book a Demo</button>
+                            </div>
+                        </div>
+                        <div class="col-sm-5 ">
+                            <div class="footer_links">
+                                <h6>Sectors</h6>
+                                <ul>
+                                    <li> <a href="#">Sectors Overview</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Warehouses</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Offices</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Retail Stores</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Manufacturing</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Emergency Services</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Education</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-7 col-sm-12">
+                    <div class="row">
+                        <div class="col-md-4 col-sm-6">
+                            <div class="footer_links">
+                                <h6>Hardware</h6>
+                                <ul>
+                                    <li>
+                                        <a href="#">Hardware Overview</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Smart Locks</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Smart Lockers</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Upgrade your exsisting lockers</a>
+                                    </li>
+                                </ul>
+                                <h6>Resources</h6>
+                                <ul>
+                                    <li>
+                                        <a href="#">System Comparisons</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">About Us</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Knowledgebase</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">EULA</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-sm-6">
+                            <div class="footer_links">
+                                <h6>Software</h6>
+                                <ul>
+                                    <li>
+                                        <a href="#">Software Overview</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Locker Management System</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Allocated Lockers</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Emplyee Day Lockers</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Device Management Lockers</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">IT Equipment Collect/Return</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Click and Collect Lockers</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Team Lockers</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">High Security Device Lockers</a>
+                                    </li>
+                                    <li>
+                                        <a class="parcel_locker" href="#">Parcel Lockers</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Mobile App Lockers</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-sm-6">
+                            <div class="footer_links">
+                                <h6>ROI Calculator</h6>
+                                <ul>
+                                    <li>
+                                        <a href="#">ROI Calculator Overview</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Office Locker</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Device Management Locker</a>
+                                    </li>
+                                    <li>
+                                        <a class="parcel_locker" href="#">Parcel Locker</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Warehouse Lockers</a>
+                                    </li>
+                                </ul>
+                                <h5>Case studies</h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer_bottom">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="bottom">
+                            <div class="left">
+                                <p>Copyright © eLocker Ltd. All rights reserved.</p>
+                            </div>
+                            <div class="right">
+                                <a href="#">Privacy Policy</a>
+                                <a href="#">Cookies Policy</a>
+                            </div></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ion-rangeslider/2.3.1/js/ion.rangeSlider.min.js"></script>
+ <script src="./assets/js/custom_js.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+        <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+        <script>
+        
+          AOS.init({disable: 'mobile'});
+        </script>
+</body>
+
+</html>
