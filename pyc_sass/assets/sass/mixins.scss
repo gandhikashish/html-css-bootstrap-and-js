@@ -1,0 +1,21 @@
+@mixin para($color: $black, $size: 20px, $weight: 500 ,$l-height: 1.5, $spacing: 1px, $m_bottom:25px){
+    color: $color;
+    font-size: $size;
+    font-weight: $weight;
+    line-height: $l-height;
+    letter-spacing:$spacing;
+    margin-bottom: $m-bottom;
+}
+@mixin bg_image($url, $size: cover, $position: center, $repeat: no-repeat) {
+    background-image: url($url);
+    background-size: $size;
+    background-position: $position;
+    background-repeat: $repeat;
+}
+@mixin dFlex($v_align: center, $h_align: center, $wrap: wrap, $direction: row) {
+    display: flex;
+    align-items: $v_align;
+    justify-content: $h_align;
+    flex-wrap: $wrap;
+    flex-direction: $direction;
+}

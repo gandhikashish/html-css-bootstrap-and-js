@@ -1,0 +1,471 @@
+.hero {
+    background-color: $dark-gray;
+    padding: 100px 0 130px 0;
+    text-align: center;
+    color: $white;
+
+    h1 {
+        font-size: 75px;
+        font-weight: 500;
+        margin-bottom: 10px;
+    }
+
+    p {
+        font-size: 28px;
+    }
+}
+
+.about_work {
+    padding: 50px 0;
+    position: relative;
+
+    .left {
+        height: 100%;
+        margin-right: 50px;
+
+        &:before {
+            position: absolute;
+            content: "";
+            width: 146px;
+            height: 585px;
+            @include bg_image($url: "../images/about_work_shape.png", $position: left);
+            left: 0;
+            z-index: -1;
+            top: 115px;
+        }
+
+        img {
+            width: 100%;
+        }
+    }
+
+    .right {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        h3 {
+            margin-bottom: 10px;
+            color: $Dark-Blue;
+            font-size: 45px;
+            font-weight: 600;
+            line-height: 1.4;
+            letter-spacing: 1px;
+        }
+
+        p {
+            @include para;
+        }
+    }
+}
+
+.strategic {
+    background-color: $gray;
+    padding: 180px 0 100px 0;
+    position: relative;
+
+    &::before {
+        content: "";
+        background-image: url("../images/PYC_GRAPHIC DEVICE-01 2.png");
+        position: absolute;
+        top: 0px;
+        left: 461px;
+        width: 306px;
+        height: 218px;
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+
+    &::after {
+        content: "";
+        position: absolute;
+        background-image: url("../images/PYC_GRAPHIC DEVICE-01 1.png");
+        bottom: 0px;
+        left: 0px;
+        width: 221px;
+        height: 200px;
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+
+    .left {
+        position: relative;
+
+        h2 {
+            color: $red;
+            font-size: 65px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            margin-bottom: 5px;
+        }
+
+        a {
+            color: $Dark-Blue;
+            font-size: 16px;
+            font-weight: 500;
+            letter-spacing: 1px;
+            margin-bottom: 20px;
+        }
+    }
+
+    .right {
+        position: relative;
+
+        h4 {
+            color: $Dark-Blue;
+            font-size: 30px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            line-height: 1.2;
+        }
+
+        p {
+            @include para;
+        }
+
+    }
+}
+
+.director {
+    padding: 70px 0;
+
+    .director_uper {
+        color: $Dark-Blue;
+        font-size: 16px;
+        font-weight: 500;
+        letter-spacing: 1px;
+        border-radius: 40px;
+        padding:5px 20px;
+        margin-bottom: 40px;
+        background-color: #c2d0dc;
+    }
+    .director_uper:hover{
+        background-color: $Dark-Blue;
+        color:$white;
+    }
+
+    h3 {
+        color: $Dark-Blue;
+        font-size: 65px;
+        font-weight: 700;
+        letter-spacing: 1px;
+        margin-bottom: 20px;
+    }
+
+    .card {
+        border: none;
+
+        img {
+            border-radius: 40px;
+            margin-bottom: 15px;
+        }
+
+        h5 {
+            color: $black;
+            font-size: 25px;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        .content {
+            padding-left: 30px;
+        }
+
+        .card_p1 {
+            font-size: 20px;
+            font-weight: 500;
+            letter-spacing: 1px;
+        }
+
+        .card_p2 {
+            color: $dark-gray;
+            font-size: 18px;
+            font-weight: 400;
+        }
+
+        .card_a1 {
+            color: $red;
+            font-size: 20px;
+            font-weight: 500;
+            letter-spacing: 1px;
+            border-bottom: 2px solid $dark-gray;
+            padding-bottom: 20px;
+            margin-bottom: 10px;
+        }
+
+        .card_a2 {
+            color: $black;
+            font-size: 16px;
+            font-weight: 500;
+            letter-spacing: 1px;
+            margin-bottom: 20px;
+        }
+    }
+}
+
+.stay_connected {
+    .connected_inner {
+        @include dFlex($h_align: flex-start, $wrap: no-wrap);
+        padding: 70px 0;
+        background-color: $gray;
+        border-radius: 40px;
+    }
+
+    .left img {
+        max-width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .right {
+        padding: 8px 68px;
+        position: relative;
+
+        &::before {
+            position: absolute;
+            content: "";
+            bottom: -26%;
+            right: 6%;
+            @include bg_image("../images/stay_connected_shape.png");
+            width: 150px;
+            height: 150px;
+        }
+
+        h5 {
+            color: $red;
+            font-size: 65px;
+            font-weight: 500;
+            margin-bottom: 15px;
+            letter-spacing: 1px;
+        }
+
+        h6 {
+            font-size: 24px;
+            margin-bottom: 25px;
+            color: $black;
+            font-weight: 400;
+        }
+
+        .email {
+            border-radius: 30px;
+            margin-bottom: 20px;
+            width: 350px;
+            max-width: 100%;
+            padding: 11px 15px;
+            border: 2px solid $red;
+
+        }
+
+        .email::placeholder {
+            color: $red;
+            font-size: 15px;
+            font-weight: 500;
+        }
+
+        a {
+            background-color: $red;
+            color: $white;
+            padding: 5px 38px 9px 47px;
+            border-radius: 40px;
+            font-size: 24px;
+            font-weight: 500;
+        }
+    }
+}
+
+@media (max-width:992px) {
+    .strategic .left h2 {
+        font-size: 46px;
+    }
+
+    .strategic .right h4 {
+        font-size: 25px;
+    }
+
+    .strategic::before {
+        left: 312px;
+    }
+
+    .stay_connected .connected_inner {
+        flex-wrap: wrap;
+    }
+
+    .stay_connected .right::before {
+        bottom: -17px;
+        right: -124px;
+    }
+}
+
+@media (max-width:768px) {
+    .hero {
+        h1 {
+            font-size: 57px;
+
+            p {
+                font-size: 22px;
+            }
+        }
+    }
+
+    .about_work .right p,
+    .strategic .right p {
+        font-size: 18px;
+        margin-bottom: 12px;
+    }
+
+    .strategic {
+        padding-top: 135px;
+
+        &::before {
+            left: 130px;
+            width: 233px;
+        }
+    }
+
+    .strategic::after {
+        bottom: -40px;
+        width: 108px;
+        height: 153px;
+    }
+
+    .about_work .left::before {
+        width: 71px;
+        height: 491px;
+    }
+
+    .about_work .right h3 {
+        font-size: 30px;
+    }
+
+    .director h3 {
+        font-size: 57px;
+        font-weight: 600;
+    }
+
+    .director {
+        padding: 30px 0;
+    }
+    .director .director_uper{
+        margin-bottom: 25px;
+
+    }
+
+    .stay_connected {
+        .connected_inner {
+            padding: 31px 0;
+            justify-content: center;
+        }
+
+        .right {
+            padding: 12px;
+
+            h5 {
+                font-size: 50px;
+                margin-bottom: 5px;
+            }
+
+            h6 {
+                font-size: 19px;
+                margin-bottom: 18px;
+            }
+
+            .email {
+                margin-bottom: 20px;
+                width: 220px;
+                padding: 3px 10px 5px 15px;
+            }
+
+            a {
+                font-size: 15px;
+                padding: 2px 23px 5px 23px;
+            }
+        }
+    }
+}
+
+@media(max-width:576px) {
+    .hero {
+        h1 {
+            font-size: 50px;
+        }
+
+        p {
+            font-size: 18px;
+        }
+    }
+
+    .about_work .left::before {
+        display: none;
+    }
+
+    .about_work .right p,
+    .strategic .right p {
+        font-size: 15px;
+        margin-bottom: 5px;
+    }
+
+    .about_work .right h3 {
+        font-size: 28px;
+        margin-bottom: 3px;
+        font-weight: 500;
+    }
+
+    .strategic {
+        padding-top: 90px;
+    }
+
+    .strategic::after {
+        bottom: -33px;
+        width: 90px;
+        height: 126px;
+    }
+
+    .strategic::before {
+        left: 35px;
+        width: 168px;
+    }
+
+    .strategic .left h2 {
+        font-size: 40px;
+        font-weight: 600;
+    }
+
+    .strategic .right h4 {
+        font-size: 20px;
+    }
+
+    .director h3 {
+        font-size: 45px;
+    }
+
+    .director {
+        padding: 12px 0;
+    }
+
+    .stay_connected .right h5 {
+        font-size: 30px;
+    }
+
+    .stay_connected .right h6 {
+        font-size: 15px;
+    }
+
+    .stay_connected .right .email {
+        margin-bottom: 13px;
+        width: 133px;
+        padding: 2px 4px 4px 11px;
+    }
+
+    .stay_connected .right a {
+        padding: 5px 26px 9px 41px;
+        font-size: 15px;
+        padding: 6px 23px 8px 23px;
+    }
+
+    .stay_connected .right::before {
+        position: absolute;
+        content: "";
+        bottom: -17px;
+        right: -124px;
+    }
+}
