@@ -1,0 +1,23 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.fib_num{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 30px;
+    align-items: center;
+}
+
+.series_wrap {
+    font-size: 30px;
+    color: #000;
+    font-weight: 500;
+}
+.fib_num .prime_number{
+    font-size: 25px;
+    font-weight: 500;
+    color: #000;
+}

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+
+<body>
+    <div class="fib_num">
+    <div>
+        <h1 class="series_outer"></h1>
+        <div class="series_wrap">
+        </div></div>
+        <div class="prime_number"></div>
+    </div>
+        <script>
+            var series_out = document.querySelector(".series_outer")
+            var series = document.querySelector(".series_wrap");
+            var prime_num=document.querySelector(".prime_number");
+            const number = parseInt(prompt('Enter the number of terms: '));
+            if (number) {
+                let n1 = 0;
+                let n2 = 1;
+                var fn = n1 + n2;
+                series_out.innerHTML = '<h2>Fibonacci Series</h2>';
+                series.innerHTML += `${n1} <br/> ${n2}`
+                while (fn < number) {
+                    fn = n1 + n2;
+                    n1 = n2;
+                    n2 = fn;
+                    series.innerHTML += `<br/> ${fn}`;
+                }
+                    var isprime = true;
+                    for (var i = 2; i < number; i++) {
+                        if (number % i == 0) {
+                            isprime = false;
+                        }
+                    }
+                    if(isprime == true){
+                    prime_num.innerHTML=`${number} is a prime number`;
+                    }
+                    else{
+                    prime_num.innerHTML=`${number} is not a prime number`;
+                    }
+                }
+          
+
+        </script>
+
+</body>
+
+</html>
