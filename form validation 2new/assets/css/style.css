@@ -1,0 +1,68 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Open Sans';
+}
+.form_wrap{
+    padding: 20px 0;
+}
+.heading{
+    font-size: 40px;
+    font-weight: 700;
+    color:#687;
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 20px;
+
+}
+.form_wrap .form_inner{
+    background-color:rgba(223, 234, 232, 0.727);
+    padding: 20px 30px;
+    border-radius: 30px;
+}
+ .form_wrap .form_inner .form_box{
+    position: relative;
+    margin-bottom: 5px;
+}
+.form_wrap .form_inner .form_box.success input{
+    border-color: #2ecc71;
+}
+.form_wrap .form_inner .form_box.error input{
+    border-color: #e74c3c;
+}
+.form_wrap .form_inner .form_box i{
+    position: absolute;
+    right: 20px;
+    top: 48px;
+    font-size: 18px;
+    visibility: hidden;
+}
+.form_wrap .form_inner .form_box.success i.fa-check{
+    visibility: visible;
+    color: #2ecc71;
+    
+}
+.form_wrap .form_inner .form_box.error i.fa-xmark{
+    visibility: visible;
+    color: #e74c3c;
+}
+.form_wrap .form_inner label{
+    font-size: 20px;
+    font-weight: 600;
+    color: #000;
+    margin-bottom: 10px;
+}
+.form_wrap .form_inner input{
+    margin-bottom: 5px;
+    border: 1px solid black;
+    /* border-radius: 2px; */
+}
+.form_wrap .form_inner .form_box small{
+    color:#e74c3c;
+    font-size: 16px;
+    visibility: hidden;
+}
+.form_wrap .form_inner .form_box.error small{
+    visibility: visible;
+}

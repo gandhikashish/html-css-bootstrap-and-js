@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>validation</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./assets/font family/transfonter.org-20230915-074103/stylesheet.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+
+<body>
+    <div class="form_wrap">
+        <div class="container">
+            <div class="col-lg-8 m-auto ">
+                <div class="heading">
+                    <h1>form validation</h1>
+                </div>
+                <form class="form_inner">
+                    <div class="form-group form_box">
+                        <label for="example_username">Username</label>
+                        <input type="text" class="form-control" id="username" aria-describedby="usernameHelp"
+                            placeholder="Enter username">
+                        <i class="fa-solid fa-check"></i>
+                        <i class="fa-solid fa-xmark"></i>
+                        <small>error msg</small>
+                    </div>
+                    <div class="form-group form_box">
+                        <label for="password">Password</label>
+                        <input type="text" class="form-control" id="password" placeholder="Password">
+                        <i class="fa-solid fa-check"></i>
+                        <i class="fa-solid fa-xmark"></i>
+                        <small>error msg</small>
+
+                    </div>
+                    <div class="form-group form_box">
+                        <label for="confirm_password">Confirm Password</label>
+                        <input type="text" class="form-control" id="confirm_password" placeholder="Confirm Password">
+                        <i class="fa-solid fa-check"></i>
+                        <i class="fa-solid fa-xmark"></i>
+                        <small>error msg</small>
+
+                    </div>
+                    <div class="form-group form_box">
+                        <label for="moblie_number">Enter Moblile Number</label>
+                        <input type="number" class="form-control" id="moblie_number" placeholder="mobile number">
+                        <i class="fa-solid fa-check"></i>
+                        <i class="fa-solid fa-xmark"></i>
+                        <small>error msg</small>
+
+                    </div>
+                    <div class="form-group form_box">
+                        <label for="Email">Email</label>
+                        <input type="text" class="form-control" id="email" placeholder="email">
+                        <i class="fa-solid fa-check"></i>
+                        <i class="fa-solid fa-xmark"></i>
+                        <small>error msg</small>
+
+                    </div>
+                    <input type="submit" name="submit" value="submit" class="btn btn-success mt-3">
+                </form>
+            </div>
+        </div>
+    </div>
+    <script>
+        var form = document.querySelector(".form_inner");
+        form.addEventListener("submit", (event) => {
+            validate();
+        
+        })
+        var validate = () => {
+
+            var user = document.querySelector("#username");
+            var user_value = user.value;
+            var pass = document.querySelector("#password");
+            var pass_value = pass.value;
+            var co_pass = document.querySelector("#confirm_password");
+            var co_pass_value = co_pass.value;
+            var number = document.querySelector("#moblie_number");
+            var number_value = number.value;
+            var email = document.querySelector("#email");
+            var email_value = email.value;
+            var correct_way = /^[a-zA-z]+$/;
+            if (user_value == "") {
+                setErrorMsg(user, "** username can't be blank");
+            }
+            else if (user_value.length < 3) {
+                setErrorMsg(user, "** Enter atleast 3 character");
+            }
+            else if (user_value.length >= 10) {
+                setErrorMsg(user, "** Enter less then 10 character");
+            }
+            else if (!user_value.match(correct_way)) {
+                setErrorMsg(user, "** Enter character only");
+            }
+            else {
+                setSuccessMsg(user);
+            }
+            if (pass_value == "") {
+                setErrorMsg(pass, "** pls enter password");
+            }
+            else if ((pass_value.length < 5) || (pass.value.length > 20)) {
+                setErrorMsg(pass, "** enter between 5 and 20");
+            }
+            else {
+                setSuccessMsg(pass);
+            }
+            if (co_pass_value == "") {
+                setErrorMsg(co_pass, "** again enter password");
+            }
+            else if (pass_value !== co_pass_value) {
+                setErrorMsg(co_pass, "** password are not matching");
+
+            }
+            else {
+                setSuccessMsg(co_pass);
+            }
+            if (number_value == "") {
+                setErrorMsg(number, "** pls enter mobile number");
+            }
+            else if (number_value.length !== 10) {
+                setErrorMsg(number, "** pls enter 10 digit mobile nmber");
+            }
+            else if ((number_value.charAt(0) != 7) && (number_value.charAt(0) != 9)&&(number_value.charAt(0) != 8)) {
+                setErrorMsg(number, "** number must be start with 9 ,8 or 7");
+            } 
+            else {
+                setSuccessMsg(number);
+            }
+            if (email_value == "") {
+                setErrorMsg(email, "** email can't be blank")
+            }
+            else if(email_value.indexOf('@') <=0) {
+                setErrorMsg(email, "** invalid @ position");
+            }
+            else if ((email_value.charAt(email_value.length-4)!='.')&&(email_value.charAt(email_value.length-3)!='.')) {
+                setErrorMsg(email, "** invalid . position");
+            }
+            
+            else {
+                setSuccessMsg(email);
+            }
+            function setErrorMsg(input, errormsgs) {
+                const form_control = input.parentElement;
+                const small = form_control.querySelector("small");
+                form_control.className = "form_box error";
+                small.innerText = errormsgs;
+                event.preventDefault();
+      
+            }
+            function setSuccessMsg(input) {
+                const form_control = input.parentElement;
+                form_control.className = "form_box success";
+            }
+            
+        }
+    </script>
+</body>
+
+</html>
